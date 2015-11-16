@@ -28,7 +28,6 @@ feature -DISPLAY
 feature -ONESHOT125
 feature -BLACKBOX
 feature VBAT
-feature MOTOR_STOP
 feature FAILSAFE
 feature RX_PARALLEL_PWM
 
@@ -95,7 +94,7 @@ color 13 330,0,255
 color 14 0,0,0
 color 15 0,0,0
 
-set looptime = 2000
+set looptime = 3500
 set emf_avoidance = 0
 set mid_rc = 1500
 set min_check = 1100
@@ -104,7 +103,7 @@ set rssi_channel = 0
 set rssi_scale = 30
 set rssi_ppm_invert = 0
 set input_filtering_mode = 0
-set min_throttle = 1064
+set min_throttle = 1150
 set max_throttle = 1850
 set min_command = 1000
 set servo_center_pulse = 1500
@@ -115,7 +114,7 @@ set 3d_deadband_throttle = 50
 set motor_pwm_rate = 400
 set servo_pwm_rate = 50
 set retarded_arm = 0
-set disarm_kill_switch = 0
+set disarm_kill_switch = 1
 set auto_disarm_delay = 5
 set small_angle = 25
 set flaps_speed = 0
@@ -149,7 +148,7 @@ set align_acc = 0
 set align_mag = 0
 set align_board_roll = 0
 set align_board_pitch = 0
-set align_board_yaw = 90
+set align_board_yaw = 0
 set max_angle_inclination = 500
 set gyro_lpf = 42
 set moron_threshold = 32
@@ -179,8 +178,8 @@ set blackbox_device = 0
 profile 0
 
 # aux
-aux 0 1 3 1525 2100
-aux 1 20 0 1725 2100
+aux 0 0 0 900 900
+aux 1 0 0 900 900
 aux 2 0 0 900 900
 aux 3 0 0 900 900
 aux 4 0 0 900 900
@@ -226,7 +225,7 @@ servo 7 1020 2000 1500 100 -1
 servo 8 1020 2000 1500 100 -1
 servo 9 1020 2000 1500 100 -1
 
-set gps_pos_p = 11
+set gps_pos_p = 15
 set gps_pos_i = 0
 set gps_pos_d = 0
 set gps_posr_p = 34
@@ -248,7 +247,7 @@ set throttle_correction_value = 0
 set throttle_correction_angle = 800
 set default_rate_profile = 0
 set gimbal_flags = 1
-set acc_lpf_factor = 100
+set acc_lpf_factor = 4
 set accxy_deadband = 40
 set accz_deadband = 40
 set accz_lpf_cutoff =  5.000
@@ -260,14 +259,14 @@ set baro_noise_lpf =  0.600
 set baro_cf_vel =  0.985
 set baro_cf_alt =  0.965
 set mag_declination = 0
-set pid_controller = 1
-set p_pitch = 53
-set i_pitch = 20
-set d_pitch = 32
-set p_roll = 47
+set pid_controller = 0
+set p_pitch = 40
+set i_pitch = 30
+set d_pitch = 23
+set p_roll = 40
 set i_roll = 30
-set d_roll = 32
-set p_yaw = 78
+set d_roll = 23
+set p_yaw = 85
 set i_yaw = 45
 set d_yaw = 0
 set p_pitchf =  2.500
@@ -282,9 +281,9 @@ set d_yawf =  0.050
 set level_horizon =  3.000
 set level_angle =  5.000
 set sensitivity_horizon = 75
-set p_alt = 64
-set i_alt = 25
-set d_alt = 24
+set p_alt = 50
+set i_alt = 0
+set d_alt = 0
 set p_level = 90
 set i_level = 10
 set d_level = 100
@@ -303,10 +302,10 @@ set rc_expo = 65
 set rc_yaw_expo = 0
 set thr_mid = 50
 set thr_expo = 0
-set roll_rate = 46
-set pitch_rate = 46
-set yaw_rate = 70
-set tpa_rate = 12
+set roll_rate = 0
+set pitch_rate = 0
+set yaw_rate = 0
+set tpa_rate = 0
 set tpa_breakpoint = 1500
 
 # 
