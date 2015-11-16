@@ -31,7 +31,7 @@ feature -ONESHOT125
 feature -BLACKBOX
 feature -CHANNEL_FORWARDING
 feature VBAT
-feature MOTOR_STOP
+feature INFLIGHT_ACC_CAL
 feature FAILSAFE
 feature RX_PARALLEL_PWM
 
