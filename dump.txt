@@ -31,6 +31,8 @@ feature -ONESHOT125
 feature -BLACKBOX
 feature -CHANNEL_FORWARDING
 feature VBAT
+feature INFLIGHT_ACC_CAL
+feature MOTOR_STOP
 feature FAILSAFE
 feature RX_PARALLEL_PWM
 
@@ -97,7 +99,7 @@ color 13 330,0,255
 color 14 0,0,0
 color 15 0,0,0
 
-set looptime = 3500
+set looptime = 2000
 set emf_avoidance = OFF
 set i2c_overclock = OFF
 set mid_rc = 1500
@@ -108,18 +110,18 @@ set rssi_scale = 30
 set rssi_ppm_invert = OFF
 set rc_smoothing = ON
 set input_filtering_mode = OFF
-set min_throttle = 1150
+set min_throttle = 1064
 set max_throttle = 1850
 set min_command = 1000
 set servo_center_pulse = 1500
-set 3d_deadband_low = 1406
-set 3d_deadband_high = 1514
-set 3d_neutral = 1460
-set 3d_deadband_throttle = 50
+set 3d_deadband_low = 0
+set 3d_deadband_high = 0
+set 3d_neutral = 0
+set 3d_deadband_throttle = 0
 set motor_pwm_rate = 400
 set servo_pwm_rate = 50
 set retarded_arm = OFF
-set disarm_kill_switch = ON
+set disarm_kill_switch = OFF
 set auto_disarm_delay = 5
 set small_angle = 25
 set fixedwing_althold_dir = 1
@@ -152,7 +154,7 @@ set align_acc = DEFAULT
 set align_mag = DEFAULT
 set align_board_roll = 0
 set align_board_pitch = 0
-set align_board_yaw = 0
+set align_board_yaw = 90
 set max_angle_inclination = 500
 set gyro_lpf = 42
 set moron_threshold = 32
@@ -208,7 +210,7 @@ rxfail 17 h
 profile 0
 
 # aux
-aux 0 0 0 900 900
+aux 0 1 3 900 1500
 aux 1 0 0 900 900
 aux 2 0 0 900 900
 aux 3 0 0 900 900
@@ -294,24 +296,24 @@ set baro_cf_vel =  0.985
 set baro_cf_alt =  0.965
 set mag_declination = 0
 set pid_controller = MWREWRITE
-set p_pitch = 40
-set i_pitch = 30
-set d_pitch = 23
-set p_roll = 40
+set p_pitch = 53
+set i_pitch = 20
+set d_pitch = 32
+set p_roll = 47
 set i_roll = 30
-set d_roll = 23
-set p_yaw = 85
+set d_roll = 32
+set p_yaw = 78
 set i_yaw = 45
 set d_yaw = 0
-set p_pitchf =  1.400
-set i_pitchf =  0.400
-set d_pitchf =  0.030
-set p_rollf =  1.400
-set i_rollf =  0.400
-set d_rollf =  0.030
-set p_yawf =  3.500
-set i_yawf =  0.400
-set d_yawf =  0.010
+set p_pitchf =  2.500
+set i_pitchf =  0.600
+set d_pitchf =  0.060
+set p_rollf =  2.500
+set i_rollf =  0.600
+set d_rollf =  0.060
+set p_yawf =  8.000
+set i_yawf =  0.500
+set d_yawf =  0.050
 set yaw_p_limit = 500
 set level_horizon =  3.000
 set level_angle =  5.000
