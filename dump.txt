@@ -32,6 +32,7 @@ feature -BLACKBOX
 feature -CHANNEL_FORWARDING
 feature VBAT
 feature INFLIGHT_ACC_CAL
+feature MOTOR_STOP
 feature FAILSAFE
 feature RX_PARALLEL_PWM
 
@@ -334,8 +335,8 @@ set gyro_cut_hz = 0
 # rateprofile
 rateprofile 0
 
-set rc_rate = 90
-set rc_expo = 65
+set rc_rate = 100
+set rc_expo = 0
 set rc_yaw_expo = 0
 set thr_mid = 50
 set thr_expo = 0
