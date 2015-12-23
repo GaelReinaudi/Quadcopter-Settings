@@ -337,7 +337,7 @@ set gyro_cut_hz = 0
 rateprofile 0
 
 set rc_rate = 90
-set rc_expo = 65
+set rc_expo = 50
 set rc_yaw_expo = 0
 set thr_mid = 50
 set thr_expo = 0
