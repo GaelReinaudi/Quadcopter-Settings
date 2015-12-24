@@ -211,7 +211,7 @@ profile 0
 
 # aux
 aux 0 1 3 900 1500
-aux 1 0 0 900 900
+aux 1 26 0 1800 2100
 aux 2 0 0 900 900
 aux 3 0 0 900 900
 aux 4 0 0 900 900
@@ -343,7 +343,7 @@ set thr_mid = 50
 set thr_expo = 0
 set roll_rate = 0
 set pitch_rate = 0
-set yaw_rate = 50
+set yaw_rate = 100
 set tpa_rate = 0
 set tpa_breakpoint = 1500
 
