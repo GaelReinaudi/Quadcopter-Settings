@@ -102,7 +102,7 @@ color 15 0,0,0
 set looptime = 2000
 set emf_avoidance = OFF
 set i2c_overclock = OFF
-set mid_rc = 1500
+set mid_rc = 1507
 set min_check = 1100
 set max_check = 1900
 set rssi_channel = 0
