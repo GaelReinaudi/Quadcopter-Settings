@@ -102,7 +102,7 @@ color 15 0,0,0
 set looptime = 2000
 set emf_avoidance = OFF
 set i2c_overclock = OFF
-set mid_rc = 1507
+set mid_rc = 1500
 set min_check = 1100
 set max_check = 1900
 set rssi_channel = 0
@@ -169,7 +169,7 @@ set servo_lowpass_freq = 400
 set servo_lowpass_enable = OFF
 set failsafe_delay = 10
 set failsafe_off_delay = 200
-set failsafe_throttle = 1100
+set failsafe_throttle = 1200
 set failsafe_kill_switch = OFF
 set failsafe_throttle_low_delay = 100
 set rx_min_usec = 885
@@ -336,9 +336,9 @@ set gyro_cut_hz = 0
 # rateprofile
 rateprofile 0
 
-set rc_rate = 200
+set rc_rate = 150
 set rc_expo = 0
-set rc_yaw_expo = 0
+set rc_yaw_expo = 50
 set thr_mid = 50
 set thr_expo = 0
 set roll_rate = 0
