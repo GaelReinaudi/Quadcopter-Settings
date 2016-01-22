@@ -281,8 +281,8 @@ set nav_speed_max = 300
 set nav_slew_rate = 30
 set alt_hold_deadband = 40
 set alt_hold_fast_change = ON
-set deadband = 0
-set yaw_deadband = 0
+set deadband = 2
+set yaw_deadband = 2
 set throttle_correction_value = 0
 set throttle_correction_angle = 800
 set default_rate_profile = 0
@@ -351,7 +351,7 @@ rateprofile 0
 
 set rc_rate = 150
 set rc_expo = 0
-set rc_yaw_expo = 50
+set rc_yaw_expo = 25
 set thr_mid = 50
 set thr_expo = 0
 set roll_rate = 0
