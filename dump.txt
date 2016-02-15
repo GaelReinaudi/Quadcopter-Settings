@@ -1,5 +1,10 @@
+
+Entering CLI Mode, type 'exit' to return, or 'help'
+
+# dump
+
 # version
-# Cleanflight/NAZE 1.12.0 Jan 11 2016 / 16:02:07 (7a4bc02)
+# Cleanflight/NAZE 1.12.0 Feb  5 2016 / 14:17:13 (360fd1a)
 # dump master
 
 # mixer
@@ -30,6 +35,7 @@ feature -DISPLAY
 feature -ONESHOT125
 feature -BLACKBOX
 feature -CHANNEL_FORWARDING
+feature -TRANSPONDER
 feature VBAT
 feature INFLIGHT_ACC_CAL
 feature MOTOR_STOP
@@ -101,8 +107,8 @@ color 15 0,0,0
 
 set looptime = 2000
 set emf_avoidance = OFF
-set i2c_overclock = OFF
-set gyro_sync = OFF
+set i2c_highspeed = ON
+set gyro_sync = ON
 set gyro_sync_denom = 1
 set mid_rc = 1500
 set min_check = 1100
@@ -110,16 +116,16 @@ set max_check = 1900
 set rssi_channel = 0
 set rssi_scale = 30
 set rssi_ppm_invert = OFF
-set rc_smoothing = ON
+set rc_smoothing = OFF
 set input_filtering_mode = OFF
 set min_throttle = 1064
 set max_throttle = 1850
 set min_command = 1000
 set servo_center_pulse = 1500
-set 3d_deadband_low = 0
-set 3d_deadband_high = 0
-set 3d_neutral = 0
-set 3d_deadband_throttle = 0
+set 3d_deadband_low = 1406
+set 3d_deadband_high = 1514
+set 3d_neutral = 1460
+set 3d_deadband_throttle = 50
 set motor_pwm_rate = 400
 set servo_pwm_rate = 50
 set retarded_arm = OFF
@@ -159,7 +165,8 @@ set align_board_roll = 0
 set align_board_pitch = 0
 set align_board_yaw = 90
 set max_angle_inclination = 500
-set gyro_lpf = 42HZ
+set gyro_lpf = 188HZ
+set gyro_soft_lpf =  60.000
 set moron_threshold = 32
 set imu_dcm_kp = 2500
 set imu_dcm_ki = 0
@@ -196,7 +203,7 @@ rxfail 3 a
 rxfail 4 h
 rxfail 5 h
 rxfail 6 h
-rxfail 7 h
+rxfail 7 s 1200
 rxfail 8 h
 rxfail 9 h
 rxfail 10 h
@@ -299,6 +306,7 @@ set baro_noise_lpf =  0.600
 set baro_cf_vel =  0.985
 set baro_cf_alt =  0.965
 set mag_declination = 0
+set pid_delta_method = MEASUREMENT
 set pid_controller = MWREWRITE
 set p_pitch = 53
 set i_pitch = 20
@@ -331,9 +339,7 @@ set p_vel = 120
 set i_vel = 45
 set d_vel = 1
 set yaw_p_limit = 500
-set gyro_soft_lpf = OFF
-set dterm_cut_hz = 0
-set yaw_pterm_cut_hz = 0
+set dterm_cut_hz =  0.000
 set gtune_loP_rll = 10
 set gtune_loP_ptch = 10
 set gtune_loP_yw = 10
