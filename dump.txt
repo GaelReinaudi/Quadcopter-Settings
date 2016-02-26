@@ -38,7 +38,6 @@ feature -CHANNEL_FORWARDING
 feature -TRANSPONDER
 feature VBAT
 feature INFLIGHT_ACC_CAL
-feature MOTOR_STOP
 feature FAILSAFE
 feature RX_PARALLEL_PWM
 
