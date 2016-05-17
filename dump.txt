@@ -39,6 +39,7 @@ feature -TRANSPONDER
 feature RX_PPM
 feature VBAT
 feature INFLIGHT_ACC_CAL
+feature SOFTSERIAL
 feature FAILSAFE
 feature TELEMETRY
 
@@ -50,6 +51,8 @@ map TAER1234
 # serial
 serial 0 1 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
+serial 30 4 115200 57600 9600 115200
+serial 31 0 115200 57600 0 115200
 
 
 # led
@@ -191,7 +194,7 @@ set gps_sbas_mode = AUTO
 set gps_auto_config = ON
 set gps_auto_baud = OFF
 set telemetry_switch = OFF
-set telemetry_inversion = OFF
+set telemetry_inversion = ON
 set frsky_default_lattitude =  0.000
 set frsky_default_longitude =  0.000
 set frsky_coordinates_format = 0
