@@ -39,6 +39,7 @@ feature -TRANSPONDER
 feature RX_PPM
 feature VBAT
 feature INFLIGHT_ACC_CAL
+feature MOTOR_STOP
 feature SOFTSERIAL
 feature FAILSAFE
 feature TELEMETRY
@@ -270,8 +271,8 @@ rxfail 17 h
 profile 0
 
 # aux
-aux 0 0 0 900 900
-aux 1 0 0 900 900
+aux 0 1 0 1700 2100
+aux 1 20 0 1300 1700
 aux 2 0 0 900 900
 aux 3 0 0 900 900
 aux 4 0 0 900 900
@@ -337,10 +338,10 @@ set nav_speed_max = 300
 set nav_slew_rate = 30
 set alt_hold_deadband = 40
 set alt_hold_fast_change = ON
-set deadband = 1
-set yaw_deadband = 1
+set deadband = 2
+set yaw_deadband = 2
 set yaw_control_direction = 1
-set 3d_deadband_throttle = 50
+set 3d_deadband_throttle = 14852
 set throttle_correction_value = 0
 set throttle_correction_angle = 800
 set default_rate_profile = 0
@@ -358,19 +359,19 @@ set baro_cf_vel =  0.985
 set baro_cf_alt =  0.965
 set mag_declination = 0
 set pid_controller = LUX
-set p_pitch = 40
+set p_pitch = 120
 set i_pitch = 30
-set d_pitch = 23
-set p_roll = 40
+set d_pitch = 17
+set p_roll = 90
 set i_roll = 30
-set d_roll = 23
-set p_yaw = 85
+set d_roll = 17
+set p_yaw = 100
 set i_yaw = 45
 set d_yaw = 0
 set p_alt = 50
 set i_alt = 0
 set d_alt = 0
-set p_level = 90
+set p_level = 30
 set i_level = 10
 set d_level = 100
 set p_vel = 120
@@ -382,7 +383,7 @@ set gtune_loP_rll = 10
 set gtune_loP_ptch = 10
 set gtune_loP_yw = 10
 set gtune_hiP_rll = 100
-set gtune_hiP_ptch = 100
+set gtune_hiP_ptch = 130
 set gtune_hiP_yw = 100
 set gtune_pwr = 0
 set gtune_settle_time = 450
@@ -395,13 +396,13 @@ rateprofile 0
 
 set rc_rate = 100
 set rc_expo = 40
-set rc_yaw_expo = 25
+set rc_yaw_expo = 20
 set thr_mid = 50
 set thr_expo = 0
-set roll_rate = 60
-set pitch_rate = 60
-set yaw_rate = 40
+set roll_rate = 35
+set pitch_rate = 35
+set yaw_rate = 60
 set tpa_rate = 30
 set tpa_breakpoint = 1500
 
-#
+# 
