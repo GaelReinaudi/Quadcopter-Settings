@@ -4,7 +4,7 @@ Entering CLI Mode, type 'exit' to return, or 'help'
 # dump
 
 # version
-# Cleanflight/NAZE 1.13.0 May 12 2016 / 01:55:45 (1e14fd7)
+# Cleanflight/NAZE 1.13.0 Jun  6 2016 / 00:03:48 (a77bc76)
 # dump master
 
 # mixer
@@ -36,13 +36,13 @@ feature -ONESHOT125
 feature -BLACKBOX
 feature -CHANNEL_FORWARDING
 feature -TRANSPONDER
-feature RX_PPM
 feature VBAT
-feature INFLIGHT_ACC_CAL
-feature MOTOR_STOP
+feature RX_SERIAL
 feature SOFTSERIAL
 feature FAILSAFE
 feature TELEMETRY
+feature ONESHOT125
+feature BLACKBOX
 
 
 # map
@@ -51,9 +51,9 @@ map TAER1234
 
 # serial
 serial 0 1 115200 57600 0 115200
-serial 1 0 115200 57600 0 115200
-serial 30 4 115200 57600 9600 115200
-serial 31 0 115200 57600 0 115200
+serial 1 64 115200 57600 0 115200
+serial 30 0 115200 57600 0 115200
+serial 31 32 115200 57600 0 115200
 
 
 # led
@@ -170,11 +170,11 @@ set rssi_ppm_invert = OFF
 set rc_smoothing = OFF
 set rx_min_usec = 885
 set rx_max_usec = 2115
-set serialrx_provider = SPEK1024
+set serialrx_provider = SBUS
 set sbus_inversion = ON
 set spektrum_sat_bind = 0
 set input_filtering_mode = OFF
-set min_throttle = 1064
+set min_throttle = 1150
 set max_throttle = 1850
 set min_command = 1000
 set servo_center_pulse = 1500
@@ -184,7 +184,7 @@ set 3d_deadband_low = 1406
 set 3d_deadband_high = 1514
 set 3d_neutral = 1460
 set retarded_arm = OFF
-set disarm_kill_switch = OFF
+set disarm_kill_switch = ON
 set auto_disarm_delay = 5
 set max_arm_angle = 25
 set small_angle = 25
@@ -216,7 +216,7 @@ set align_acc = DEFAULT
 set align_mag = DEFAULT
 set align_board_roll = 0
 set align_board_pitch = 0
-set align_board_yaw = 90
+set align_board_yaw = 0
 set max_angle_inclination = 500
 set gyro_lpf = 188HZ
 set gyro_soft_lpf = 60
@@ -231,7 +231,7 @@ set servo_lowpass_freq =  400.000
 set servo_lowpass_enable = OFF
 set failsafe_delay = 10
 set failsafe_off_delay = 200
-set failsafe_throttle = 1200
+set failsafe_throttle = 1000
 set failsafe_kill_switch = OFF
 set failsafe_throttle_low_delay = 100
 set failsafe_procedure = 0
@@ -253,7 +253,7 @@ rxfail 3 a
 rxfail 4 h
 rxfail 5 h
 rxfail 6 h
-rxfail 7 s 1200
+rxfail 7 h
 rxfail 8 h
 rxfail 9 h
 rxfail 10 h
@@ -271,8 +271,8 @@ rxfail 17 h
 profile 0
 
 # aux
-aux 0 1 0 1700 2100
-aux 1 20 0 1300 1700
+aux 0 0 0 900 900
+aux 1 0 0 900 900
 aux 2 0 0 900 900
 aux 3 0 0 900 900
 aux 4 0 0 900 900
@@ -338,8 +338,8 @@ set nav_speed_max = 300
 set nav_slew_rate = 30
 set alt_hold_deadband = 40
 set alt_hold_fast_change = ON
-set deadband = 2
-set yaw_deadband = 2
+set deadband = 0
+set yaw_deadband = 0
 set yaw_control_direction = 1
 set 3d_deadband_throttle = 14852
 set throttle_correction_value = 0
@@ -358,20 +358,20 @@ set baro_noise_lpf =  0.600
 set baro_cf_vel =  0.985
 set baro_cf_alt =  0.965
 set mag_declination = 0
-set pid_controller = LUX
-set p_pitch = 120
+set pid_controller = MWREWRITE
+set p_pitch = 40
 set i_pitch = 30
-set d_pitch = 17
-set p_roll = 90
+set d_pitch = 23
+set p_roll = 40
 set i_roll = 30
-set d_roll = 17
-set p_yaw = 100
+set d_roll = 23
+set p_yaw = 85
 set i_yaw = 45
 set d_yaw = 0
 set p_alt = 50
 set i_alt = 0
 set d_alt = 0
-set p_level = 30
+set p_level = 20
 set i_level = 10
 set d_level = 100
 set p_vel = 120
@@ -383,7 +383,7 @@ set gtune_loP_rll = 10
 set gtune_loP_ptch = 10
 set gtune_loP_yw = 10
 set gtune_hiP_rll = 100
-set gtune_hiP_ptch = 130
+set gtune_hiP_ptch = 100
 set gtune_hiP_yw = 100
 set gtune_pwr = 0
 set gtune_settle_time = 450
@@ -394,15 +394,15 @@ set gtune_average_cycles = 16
 # rateprofile
 rateprofile 0
 
-set rc_rate = 100
-set rc_expo = 40
-set rc_yaw_expo = 20
+set rc_rate = 90
+set rc_expo = 65
+set rc_yaw_expo = 0
 set thr_mid = 50
 set thr_expo = 0
-set roll_rate = 35
-set pitch_rate = 35
-set yaw_rate = 60
-set tpa_rate = 30
+set roll_rate = 0
+set pitch_rate = 0
+set yaw_rate = 0
+set tpa_rate = 0
 set tpa_breakpoint = 1500
 
 # 
