@@ -1,3 +1,6 @@
+
+Entering CLI Mode, type 'exit' to return, or 'help'
+
 # dump
 
 # version
@@ -173,7 +176,7 @@ beeper ON_USB
 beeper BLACKBOX_ERASE
 
 # map
-map AETR1234
+map TAER1234
 
 # serial
 serial 20 1 115200 57600 0 115200
@@ -663,4 +666,4 @@ set yaw_srate = 75
 set tpa_rate = 10
 set tpa_breakpoint = 1650
 
-# 
+#
