@@ -2,13 +2,13 @@
 
 board_name CRAZYBEEF3FR
 manufacturer_id 
-name -
+name UR65
 resource BEEPER 1 C15
 resource MOTOR 1 B08
 resource MOTOR 2 B09
 resource MOTOR 3 A03
 resource MOTOR 4 A02
-resource MOTOR 5 B06
+resource MOTOR 5 NONE
 resource MOTOR 6 NONE
 resource MOTOR 7 NONE
 resource MOTOR 8 NONE
@@ -21,7 +21,7 @@ resource SERVO 6 NONE
 resource SERVO 7 NONE
 resource SERVO 8 NONE
 resource PPM 1 NONE
-resource LED_STRIP 1 B04
+resource LED_STRIP 1 NONE
 resource SERIAL_TX 1 NONE
 resource SERIAL_TX 2 NONE
 resource SERIAL_TX 3 B10
@@ -171,9 +171,9 @@ beacon CRASH FLIP
 beacon CAM_CONNECTION_OPEN
 beacon CAM_CONNECTION_CLOSED
 beacon RC_SMOOTHING_INIT_FAIL
-map AETR1234
+map TAER1234
 serial 20 1 115200 57600 0 115200
-serial 2 0 115200 57600 0 115200
+serial 2 2048 115200 57600 0 115200
 led 0 0,0::C:0
 led 1 0,0::C:0
 led 2 0,0::C:0
@@ -270,10 +270,10 @@ mode_color 6 8 0
 mode_color 6 9 0
 mode_color 6 10 0
 mode_color 7 0 3
-aux 0 0 0 900 900 0 0
-aux 1 0 0 900 900 0 0
-aux 2 0 0 900 900 0 0
-aux 3 0 0 900 900 0 0
+aux 0 0 0 1200 1800 0 0
+aux 1 1 1 1700 2100 0 0
+aux 2 28 1 1250 1700 0 0
+aux 3 35 2 1700 2100 0 0
 aux 4 0 0 900 900 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
@@ -359,7 +359,7 @@ set dyn_notch_width_percent = 50
 set align_acc = DEFAULT
 set acc_hardware = AUTO
 set acc_lpf_hz = 10
-set acc_trim_pitch = 0
+set acc_trim_pitch = 4
 set acc_trim_roll = 0
 set acc_calibration = 0,0,0
 set mid_rc = 1500
@@ -371,7 +371,7 @@ set rssi_scale = 100
 set rssi_offset = 0
 set rssi_invert = OFF
 set rc_interp = AUTO
-set rc_interp_ch = RPYT
+set rc_interp_ch = RPT
 set rc_interp_int = 19
 set rc_smoothing_type = INTERPOLATION
 set rc_smoothing_input_hz = 0
@@ -402,7 +402,7 @@ set min_command = 1000
 set dshot_idle_value = 450
 set dshot_burst = ON
 set use_unsynced_pwm = OFF
-set motor_pwm_protocol = ONESHOT125
+set motor_pwm_protocol = DSHOT600
 set motor_pwm_rate = 480
 set motor_pwm_inversion = OFF
 set motor_poles = 14
@@ -434,7 +434,7 @@ set vbat_cutoff_percent = 100
 set vbat_scale = 110
 set vbat_divider = 10
 set vbat_multiplier = 1
-set ibata_scale = 2350
+set ibata_scale = 1175
 set ibata_offset = 0
 set ibatv_scale = 0
 set ibatv_offset = 0
@@ -489,7 +489,7 @@ set osd_warn_batt_warning = ON
 set osd_warn_batt_critical = ON
 set osd_warn_visual_beeper = ON
 set osd_warn_crash_flip = ON
-set osd_warn_esc_fail = ON
+set osd_warn_esc_fail = OFF
 set osd_rssi_alarm = 20
 set osd_cap_alarm = 2200
 set osd_alt_alarm = 100
@@ -500,22 +500,22 @@ set osd_ah_max_pit = 20
 set osd_ah_max_rol = 40
 set osd_tim1 = 2560
 set osd_tim2 = 2561
-set osd_vbat_pos = 234
-set osd_rssi_pos = 234
-set osd_tim_1_pos = 234
-set osd_tim_2_pos = 234
+set osd_vbat_pos = 2114
+set osd_rssi_pos = 2083
+set osd_tim_1_pos = 54
+set osd_tim_2_pos = 2134
 set osd_remaining_time_estimate_pos = 234
-set osd_flymode_pos = 234
+set osd_flymode_pos = 2425
 set osd_anti_gravity_pos = 234
 set osd_g_force_pos = 234
-set osd_throttle_pos = 234
+set osd_throttle_pos = 2456
 set osd_vtx_channel_pos = 234
-set osd_crosshairs_pos = 205
+set osd_crosshairs_pos = 2253
 set osd_ah_sbar_pos = 206
 set osd_ah_pos = 78
-set osd_current_pos = 234
-set osd_mah_drawn_pos = 234
-set osd_craft_name_pos = 234
+set osd_current_pos = 2433
+set osd_mah_drawn_pos = 2401
+set osd_craft_name_pos = 2446
 set osd_gps_speed_pos = 234
 set osd_gps_lon_pos = 234
 set osd_gps_lat_pos = 234
@@ -535,7 +535,7 @@ set osd_avg_cell_voltage_pos = 234
 set osd_pit_ang_pos = 234
 set osd_rol_ang_pos = 234
 set osd_battery_usage_pos = 234
-set osd_disarmed_pos = 234
+set osd_disarmed_pos = 2346
 set osd_nheading_pos = 234
 set osd_nvario_pos = 234
 set osd_esc_tmp_pos = 234
@@ -582,10 +582,10 @@ set displayport_max7456_wht = 2
 set esc_sensor_halfduplex = OFF
 set esc_sensor_current_offset = 0
 set frsky_spi_autobind = OFF
-set frsky_spi_tx_id = 0,0
-set frsky_spi_offset = 0
-set frsky_spi_bind_hop_data = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-set frsky_x_rx_num = 0
+set frsky_spi_tx_id = 10,84
+set frsky_spi_offset = -53
+set frsky_spi_bind_hop_data = 4,169,99,29,194,124,54,219,149,79,9,174,104,34,199,129,59,224,154,84,14,179,109,39,204,134,64,229,159,89,19,184,114,44,209,139,69,234,164,94,24,189,119,49,214,144,74,0,0,0
+set frsky_x_rx_num = 10
 set frsky_spi_use_external_adc = OFF
 set led_inversion = 0
 set camera_control_mode = HARDWARE_PWM
@@ -595,7 +595,7 @@ set camera_control_internal_resistance = 470
 set camera_control_inverted = OFF
 set pinio_config = 1,1,1,1
 set pinio_box = 255,255,255,255
-set rcdevice_init_dev_attempts = 6
+set rcdevice_init_dev_attempts = 4
 set rcdevice_init_dev_attempt_interval = 1000
 profile 0
 
@@ -607,7 +607,7 @@ set dterm_notch_cutoff = 160
 set vbat_pid_gain = OFF
 set pid_at_min_throttle = ON
 set anti_gravity_mode = SMOOTH
-set anti_gravity_threshold = 250
+set anti_gravity_threshold = 350
 set anti_gravity_gain = 5000
 set feedforward_transition = 0
 set acc_limit_yaw = 100
@@ -648,7 +648,7 @@ set f_roll = 60
 set p_yaw = 65
 set i_yaw = 45
 set d_yaw = 0
-set f_yaw = 60
+set f_yaw = 0
 set p_level = 50
 set i_level = 50
 set d_level = 75
