@@ -123,8 +123,6 @@ feature MOTOR_STOP
 feature TELEMETRY
 feature OSD
 feature RX_SPI
-feature ANTI_GRAVITY
-feature DYNAMIC_FILTER
 beeper GYRO_CALIBRATED
 beeper RX_LOST
 beeper RX_LOST_LANDING
@@ -637,17 +635,17 @@ set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_debug_axis = ROLL
 set acro_trainer_gain = 75
-set p_pitch = 50
-set i_pitch = 50
-set d_pitch = 27
+set p_pitch = 58
+set i_pitch = 55
+set d_pitch = 21
 set f_pitch = 60
-set p_roll = 46
-set i_roll = 45
-set d_roll = 25
+set p_roll = 40
+set i_roll = 35
+set d_roll = 18
 set f_roll = 60
-set p_yaw = 65
-set i_yaw = 45
-set d_yaw = 0
+set p_yaw = 79
+set i_yaw = 35
+set d_yaw = 20
 set f_yaw = 0
 set p_level = 50
 set i_level = 50
