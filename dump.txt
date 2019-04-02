@@ -1,6 +1,4 @@
-Entering CLI Mode, type 'exit' to return, or 'help'
-
-# dump
+dump
 
 # version
 # Betaflight / CLRACINGF4 (CLR4) 3.5.7 Mar 15 2019 / 21:38:44 (e9130527c) MSP API: 1.40
@@ -164,6 +162,7 @@ feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
 feature RX_SERIAL
 feature OSD
+feature AIRMODE
 feature ANTI_GRAVITY
 feature DYNAMIC_FILTER
 
@@ -193,8 +192,8 @@ beeper CAM_CONNECTION_CLOSED
 beeper RC_SMOOTHING_INIT_FAIL
 
 # beacon
-beacon -RX_LOST
-beacon -RX_SET
+beacon RX_LOST
+beacon RX_SET
 
 # map
 map TAER1234
@@ -203,7 +202,7 @@ map TAER1234
 serial 20 1 115200 57600 0 115200
 serial 0 64 115200 57600 0 115200
 serial 2 0 115200 57600 0 115200
-serial 3 0 115200 57600 0 115200
+serial 3 2048 115200 57600 0 115200
 serial 5 0 115200 57600 0 115200
 
 # led
@@ -309,11 +308,11 @@ mode_color 6 10 0
 mode_color 7 0 3
 
 # aux
-aux 0 0 0 1600 2000 0 0
-aux 1 1 1 900 1300 0 0
-aux 2 2 1 1300 1700 0 0
-aux 3 13 2 1650 2050 0 0
-aux 4 0 0 900 900 0 0
+aux 0 0 0 1300 1700 0 0
+aux 1 1 1 1700 2100 0 0
+aux 2 13 2 1700 2100 0 0
+aux 3 30 3 900 1700 0 0
+aux 4 36 2 1800 2100 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
 aux 7 0 0 900 900 0 0
@@ -366,10 +365,10 @@ vtx 8 0 0 0 900 900
 vtx 9 0 0 0 900 900
 
 # rxfail
-rxfail 0 a
-rxfail 1 a
-rxfail 2 a
-rxfail 3 a
+rxfail 0 h
+rxfail 1 h
+rxfail 2 h
+rxfail 3 h
 rxfail 4 h
 rxfail 5 h
 rxfail 6 h
@@ -430,7 +429,7 @@ set rc_smoothing_derivative_hz = 0
 set rc_smoothing_debug_axis = ROLL
 set rc_smoothing_input_type = BIQUAD
 set rc_smoothing_derivative_type = BIQUAD
-set fpv_mix_degrees = 0
+set fpv_mix_degrees = 25
 set max_aux_channels = 14
 set serialrx_provider = SBUS
 set serialrx_inverted = OFF
@@ -460,15 +459,15 @@ set thr_corr_value = 0
 set thr_corr_angle = 800
 set failsafe_delay = 4
 set failsafe_off_delay = 10
-set failsafe_throttle = 1000
+set failsafe_throttle = 1111
 set failsafe_switch_mode = STAGE1
 set failsafe_throttle_low_delay = 100
-set failsafe_procedure = DROP
+set failsafe_procedure = AUTO-LAND
 set align_board_roll = 0
 set align_board_pitch = 0
 set align_board_yaw = 0
 set gimbal_mode = NORMAL
-set bat_capacity = 0
+set bat_capacity = 1300
 set vbat_max_cell_voltage = 43
 set vbat_full_cell_voltage = 41
 set vbat_min_cell_voltage = 33
@@ -513,7 +512,7 @@ set accz_deadband = 40
 set acc_unarmedcal = ON
 set imu_dcm_kp = 2500
 set imu_dcm_ki = 0
-set small_angle = 25
+set small_angle = 180
 set auto_disarm_delay = 5
 set gyro_cal_on_first_arm = OFF
 set gps_provider = NMEA
@@ -567,9 +566,9 @@ set osd_warn_batt_critical = ON
 set osd_warn_visual_beeper = ON
 set osd_warn_crash_flip = ON
 set osd_warn_esc_fail = ON
-set osd_warn_core_temp = ON
+set osd_warn_core_temp = OFF
 set osd_rssi_alarm = 20
-set osd_cap_alarm = 2200
+set osd_cap_alarm = 1000
 set osd_alt_alarm = 100
 set osd_esc_temp_alarm = -128
 set osd_esc_rpm_alarm = -1
@@ -579,46 +578,46 @@ set osd_ah_max_pit = 20
 set osd_ah_max_rol = 40
 set osd_tim1 = 2560
 set osd_tim2 = 2561
-set osd_vbat_pos = 2401
-set osd_rssi_pos = 40
-set osd_tim_1_pos = 2454
-set osd_tim_2_pos = 2422
+set osd_vbat_pos = 2444
+set osd_rssi_pos = 2400
+set osd_tim_1_pos = 2424
+set osd_tim_2_pos = 2456
 set osd_remaining_time_estimate_pos = 234
-set osd_flymode_pos = 333
+set osd_flymode_pos = 234
 set osd_anti_gravity_pos = 234
 set osd_g_force_pos = 234
-set osd_throttle_pos = 225
-set osd_vtx_channel_pos = 377
+set osd_throttle_pos = 234
+set osd_vtx_channel_pos = 234
 set osd_crosshairs_pos = 205
 set osd_ah_sbar_pos = 206
-set osd_ah_pos = 2248
-set osd_current_pos = 2090
-set osd_mah_drawn_pos = 2433
-set osd_craft_name_pos = 362
-set osd_gps_speed_pos = 218
-set osd_gps_lon_pos = 82
-set osd_gps_lat_pos = 65
-set osd_gps_sats_pos = 51
-set osd_home_dir_pos = 302
-set osd_home_dist_pos = 303
-set osd_compass_bar_pos = 266
-set osd_altitude_pos = 247
-set osd_pid_roll_pos = 423
-set osd_pid_pitch_pos = 455
-set osd_pid_yaw_pos = 487
-set osd_debug_pos = 1
-set osd_power_pos = 321
-set osd_pidrate_profile_pos = 345
-set osd_warnings_pos = 329
-set osd_avg_cell_voltage_pos = 76
-set osd_pit_ang_pos = 257
-set osd_rol_ang_pos = 289
-set osd_battery_usage_pos = 392
-set osd_disarmed_pos = 138
-set osd_nheading_pos = 311
-set osd_nvario_pos = 279
-set osd_esc_tmp_pos = 82
-set osd_esc_rpm_pos = 83
+set osd_ah_pos = 234
+set osd_current_pos = 2400
+set osd_mah_drawn_pos = 2432
+set osd_craft_name_pos = 234
+set osd_gps_speed_pos = 234
+set osd_gps_lon_pos = 234
+set osd_gps_lat_pos = 234
+set osd_gps_sats_pos = 234
+set osd_home_dir_pos = 234
+set osd_home_dist_pos = 234
+set osd_compass_bar_pos = 234
+set osd_altitude_pos = 234
+set osd_pid_roll_pos = 234
+set osd_pid_pitch_pos = 234
+set osd_pid_yaw_pos = 234
+set osd_debug_pos = 234
+set osd_power_pos = 234
+set osd_pidrate_profile_pos = 234
+set osd_warnings_pos = 2377
+set osd_avg_cell_voltage_pos = 234
+set osd_pit_ang_pos = 234
+set osd_rol_ang_pos = 234
+set osd_battery_usage_pos = 2281
+set osd_disarmed_pos = 234
+set osd_nheading_pos = 234
+set osd_nvario_pos = 234
+set osd_esc_tmp_pos = 234
+set osd_esc_rpm_pos = 234
 set osd_rtc_date_time_pos = 234
 set osd_adjustment_range_pos = 234
 set osd_core_temp_pos = 234
@@ -648,7 +647,7 @@ set vtx_low_power_disarm = OFF
 set vtx_freq = 5740
 set vtx_pit_mode_freq = 0
 set vtx_halfduplex = ON
-set vcd_video_system = AUTO
+set vcd_video_system = NTSC
 set vcd_h_offset = 0
 set vcd_v_offset = 0
 set max7456_clock = DEFAULT
@@ -683,7 +682,7 @@ set dterm_lowpass_type = PT1
 set dterm_lowpass_hz = 100
 set dterm_lowpass2_hz = 200
 set dterm_notch_hz = 0
-set dterm_notch_cutoff = 160
+set dterm_notch_cutoff = 0
 set vbat_pid_gain = OFF
 set pid_at_min_throttle = ON
 set anti_gravity_mode = SMOOTH
@@ -703,7 +702,7 @@ set crash_limit_yaw = 200
 set crash_recovery = OFF
 set iterm_rotation = ON
 set smart_feedforward = OFF
-set iterm_relax = OFF
+set iterm_relax = RP
 set iterm_relax_type = GYRO
 set iterm_relax_cutoff = 11
 set iterm_windup = 40
@@ -718,17 +717,17 @@ set acro_trainer_lookahead_ms = 50
 set acro_trainer_debug_axis = ROLL
 set acro_trainer_gain = 75
 set p_pitch = 58
-set i_pitch = 50
-set d_pitch = 35
+set i_pitch = 55
+set d_pitch = 21
 set f_pitch = 60
 set p_roll = 40
-set i_roll = 40
-set d_roll = 30
+set i_roll = 35
+set d_roll = 18
 set f_roll = 60
-set p_yaw = 70
-set i_yaw = 45
+set p_yaw = 79
+set i_yaw = 35
 set d_yaw = 20
-set f_yaw = 60
+set f_yaw = 0
 set p_level = 50
 set i_level = 50
 set d_level = 75
@@ -747,14 +746,16 @@ set thr_expo = 0
 set rates_type = BETAFLIGHT
 set roll_rc_rate = 100
 set pitch_rc_rate = 100
-set yaw_rc_rate = 100
+set yaw_rc_rate = 150
 set roll_expo = 0
 set pitch_expo = 0
 set yaw_expo = 0
-set roll_srate = 70
-set pitch_srate = 70
-set yaw_srate = 70
+set roll_srate = 66
+set pitch_srate = 66
+set yaw_srate = 66
 set tpa_rate = 10
 set tpa_breakpoint = 1650
 set throttle_limit_type = OFF
 set throttle_limit_percent = 100
+
+# 
