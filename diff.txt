@@ -58,10 +58,8 @@ aux 4 36 2 1800 2100 0 0
 # vtx
 
 # rxfail
-rxfail 0 h
-rxfail 1 h
-rxfail 2 h
 rxfail 3 h
+rxfail 15 s 1000
 
 # master
 set acc_calibration = 44,11,31
