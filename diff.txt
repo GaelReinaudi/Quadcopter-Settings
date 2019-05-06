@@ -1,15 +1,10 @@
-diff all
+# diff
 
 # version
 # Betaflight / CLRACINGF4 (CLR4) 3.5.7 Mar 15 2019 / 21:38:44 (e9130527c) MSP API: 1.40
 
 board_name CLRACINGF4
 manufacturer_id 
-mcu_id 00310057354b500520353146
-signature 
-
-# reset configuration to default settings
-defaults nosave
 
 # name
 
@@ -91,28 +86,17 @@ set vcd_video_system = NTSC
 profile 0
 
 set dterm_notch_cutoff = 0
+set smart_feedforward = ON
 set iterm_relax = RP
-set p_pitch = 58
-set i_pitch = 55
-set d_pitch = 21
-set p_roll = 40
-set i_roll = 35
-set d_roll = 18
-set p_yaw = 79
-set i_yaw = 35
-set d_yaw = 20
-set f_yaw = 0
-
-# profile
-profile 1
-
-
-# profile
-profile 2
-
-
-# restore original profile selection
-profile 0
+set p_pitch = 49
+set d_pitch = 29
+set f_pitch = 150
+set p_roll = 55
+set i_roll = 55
+set d_roll = 30
+set f_roll = 150
+set i_yaw = 120
+set f_yaw = 100
 
 # rateprofile
 rateprofile 0
@@ -122,29 +106,4 @@ set roll_srate = 66
 set pitch_srate = 66
 set yaw_srate = 66
 
-# rateprofile
-rateprofile 1
-
-
-# rateprofile
-rateprofile 2
-
-
-# rateprofile
-rateprofile 3
-
-
-# rateprofile
-rateprofile 4
-
-
-# rateprofile
-rateprofile 5
-
-
-# restore original rateprofile selection
-rateprofile 0
-
-# save configuration
-save
 # 
